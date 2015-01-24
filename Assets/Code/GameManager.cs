@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour {
 
 	public static GameManager	Instance;
 
-	struct Score
+	public struct Score
 	{
 		int air;
 		int earth;
