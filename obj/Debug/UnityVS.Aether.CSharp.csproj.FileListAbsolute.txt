@@ -1,0 +1,11 @@
+D:\GitHub\Aether\Temp\UnityVS_bin\Debug\Assembly-CSharp.dll
+D:\GitHub\Aether\Temp\UnityVS_bin\Debug\Assembly-CSharp.pdb
+D:\GitHub\Aether\Temp\UnityVS_bin\Debug\UnityEditor.dll
+D:\GitHub\Aether\Temp\UnityVS_bin\Debug\UnityEngine.dll
+D:\GitHub\Aether\Temp\UnityVS_bin\Debug\UnityEngine.UI.dll
+D:\GitHub\Aether\Temp\UnityVS_bin\Debug\UnityEngine.xml
+D:\GitHub\Aether\Temp\UnityVS_bin\Debug\UnityEditor.xml
+D:\GitHub\Aether\Temp\UnityVS_bin\Debug\UnityEngine.UI.xml
+D:\GitHub\Aether\obj\Debug\UnityVS.Aether.CSharp.csprojResolveAssemblyReference.cache
+D:\GitHub\Aether\obj\Debug\Assembly-CSharp.dll
+D:\GitHub\Aether\obj\Debug\Assembly-CSharp.pdb
