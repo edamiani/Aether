@@ -1,0 +1,11 @@
+*.asset binary
+*.fbx binary
+*.gif binary
+*.jpg binary
+*.mat binary
+*.mdb binary
+*.meta binary
+*.png binary
+*.prefab binary
+*.tga binary
+*.unity binary
