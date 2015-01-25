@@ -1,23 +1,26 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class EarthMiniGameManager : MonoBehaviour {
 
 	public static EarthMiniGameManager Instance;
 
-	private static int 	MAX_ENEMIES = 9;
-	private static int	POINT_ON_CLICK_ENEMY = 10;
-	private static int	POINT_ON_CLICK_ALLY = 10;
+	private static int 			MAX_ENEMIES = 9;
+	private static int			POINT_ON_CLICK_ENEMY = 10;
+	private static int			POINT_ON_CLICK_ALLY = 10;
 
-	public Enemy[]		enemies = new Enemy[MAX_ENEMIES];
+	public Enemy[]				enemies = new Enemy[MAX_ENEMIES];
 
-	private float 		timerToRespawn;
-	private float 		waitingTimeToRespawn = 0.5f;
+	private float 				timerToRespawn;
+	private float 				waitingTimeToRespawn = 0.5f;
 
-	private float		waitingTimeToHide = 1;
+	private float				waitingTimeToHide = 1;
 
-	public int			mPoints = 0;
-	private int			points { get { return mPoints; } }
+	public int					mPoints = 0;
+	private int					points { get { return mPoints; } }
+
+	public EarthMiniGameTimeManager timeManager;
 
 	void Awake () 
 	{
@@ -45,8 +48,7 @@ public class EarthMiniGameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		this.CanRespawnEnemy ();
-	
+		this.CanRespawnEnemy ();	
 	}
 
 	private void CanRespawnEnemy() {
