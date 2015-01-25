@@ -5,8 +5,12 @@ using UnityEngine.UI;
 
 class SceneManagerElementalChoice : SceneManager
 {
+	public FadeScreen fade;
+
 	void Awake()
 	{
+		fade.FadeIn(0, 0, 0, 1);
+
 		GameManager gameManager = GameManager.Instance;
 
 		gameManager.currentElement = gameManager.initialElement;
@@ -39,6 +43,9 @@ class SceneManagerElementalChoice : SceneManager
 
 	public override void LoadScene(int sceneId)
 	{
+		fade.FadeOut(0, 0, 0, 0);
+		Invoke("DeferredLoading", .5f);
+
 		Debug.Log("Loading level " + sceneId);
 
 		Application.LoadLevel(sceneId);
@@ -46,6 +53,9 @@ class SceneManagerElementalChoice : SceneManager
 
 	public void LoadSceneAir()
 	{
+		fade.FadeOut(0, 0, 0, 0);
+		Invoke("DeferredLoading", .5f);
+
 		Debug.Log("Setting initial elemental type to air.");
 
 		GameManager.Instance.initialElement = GameManager.ElementalType.Air;
@@ -57,6 +67,9 @@ class SceneManagerElementalChoice : SceneManager
 
 	public void LoadSceneEarth()
 	{
+		fade.FadeOut(0, 0, 0, 0);
+		Invoke("DeferredLoading", .5f);
+
 		Debug.Log("Setting initial elemental type to earth.");
 
 		GameManager.Instance.initialElement = GameManager.ElementalType.Earth;
@@ -68,6 +81,9 @@ class SceneManagerElementalChoice : SceneManager
 
 	public void LoadSceneFire()
 	{
+		fade.FadeOut(0, 0, 0, 0);
+		Invoke("DeferredLoading", 5f);
+
 		Debug.Log("Setting initial elemental type to fire.");
 
 		GameManager.Instance.initialElement = GameManager.ElementalType.Fire;
@@ -79,6 +95,9 @@ class SceneManagerElementalChoice : SceneManager
 
 	public void LoadSceneWater()
 	{
+		fade.FadeOut(0, 0, 0, 0);
+		Invoke("DeferredLoading", .5f);
+
 		Debug.Log("Setting initial elemental type to water.");
 
 		GameManager.Instance.initialElement = GameManager.ElementalType.Water;
@@ -90,9 +109,17 @@ class SceneManagerElementalChoice : SceneManager
 
 	public void LoadSceneAether()
 	{
+		fade.FadeOut(0, 0, 0, 0);
+		Invoke("DeferredLoading", .5f);
+
 		Debug.Log("Moving to the aether...");
 
 		Application.LoadLevel(5);
+	}
+
+	public void DeferredLoading()
+	{
+		Debug.Log("Bu!");
 	}
 
 	public override void StartMiniGames(GameManager.ElementalType game1, GameManager.ElementalType game2 = GameManager.ElementalType.None)

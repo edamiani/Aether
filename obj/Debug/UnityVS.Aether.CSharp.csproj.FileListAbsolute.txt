@@ -9,3 +9,9 @@ D:\GitHub\Aether\Temp\UnityVS_bin\Debug\UnityEngine.UI.xml
 D:\GitHub\Aether\obj\Debug\UnityVS.Aether.CSharp.csprojResolveAssemblyReference.cache
 D:\GitHub\Aether\obj\Debug\Assembly-CSharp.dll
 D:\GitHub\Aether\obj\Debug\Assembly-CSharp.pdb
+D:\GitHub\Aether\Temp\UnityVS_bin\Debug\DOTween.dll
+D:\GitHub\Aether\Temp\UnityVS_bin\Debug\DOTween43.dll
+D:\GitHub\Aether\Temp\UnityVS_bin\Debug\DOTween46.dll
+D:\GitHub\Aether\Temp\UnityVS_bin\Debug\DOTween.xml
+D:\GitHub\Aether\Temp\UnityVS_bin\Debug\DOTween43.xml
+D:\GitHub\Aether\Temp\UnityVS_bin\Debug\DOTween46.xml

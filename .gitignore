@@ -15,6 +15,8 @@ Temp
 Build
 *.unityprog
 *.unityproj
+/obj/Debug
+/obj/Debug/*
 /obj/Debug/Assembly-CSharp-Editor.dll
 /obj/Debug/Assembly-CSharp-Editor.pdb
 /obj/Debug/Assembly-CSharp.dll

@@ -5,25 +5,24 @@ using DG.Tweening;
 
 public class FadeScreen : MonoBehaviour 
 {
-	
 	Image img;
-	public float duration = 2f;
+	private float duration = .5f;
 
-	void Awake () 
+	void Awake() 
 	{
 		img = GetComponent<Image>();
-		img.color = new Color(0, 0, 0, 1);
-		FadeIn ();
+		FadeIn(0, 0, 0, 1);
 	}
 	
-	public void FadeOut()
+	public void FadeOut(int red, int green, int blue, int alpha)
 	{
-		img.color = new Color(1, 1, 1, 0);
+		img.color = new Color(red, green, blue, alpha);
 		img.DOFade(1, duration);
 	}
-	
-	public void FadeIn()
+
+	public void FadeIn(int red, int green, int blue, int alpha)
 	{
+		img.color = new Color(red, green, blue, alpha);
 		img.DOFade(0, duration);
 	}
 }

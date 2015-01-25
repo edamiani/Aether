@@ -4,6 +4,8 @@ using UnityEngine;
 
 class SceneManagerChoiceScreen : SceneManager
 {
+	public FadeScreen fade;
+
 	private SpriteRenderer mSprBgLeftFire;
 	private SpriteRenderer mSprBgLeftAir;
 	private SpriteRenderer mSprBgRightWater;
@@ -18,8 +20,12 @@ class SceneManagerChoiceScreen : SceneManager
 	private SpriteRenderer mSprGateRightWaterAir;
 	private SpriteRenderer mSprGateRightWaterEarth;
 
+	private int mTempSceneId;
+
 	void Awake()
 	{
+		fade.FadeIn(0, 0, 0, 1);
+
 		mSprBgLeftAir = GameObject.Find("spr_bg_left_air").GetComponent<SpriteRenderer>();
 		mSprBgLeftFire = GameObject.Find("spr_bg_left_fire").GetComponent<SpriteRenderer>();
 		mSprBgRightEarth = GameObject.Find("spr_bg_right_earth").GetComponent<SpriteRenderer>();
@@ -96,9 +102,19 @@ class SceneManagerChoiceScreen : SceneManager
 
 	public override void LoadScene(int sceneId)
 	{
+		fade.FadeOut(0, 0, 0, 0);
+
+		mTempSceneId = sceneId;
+
+		Invoke("DeferredLoading", .5f);
+		//DeferredLoading();
+	}
+
+	public void DeferredLoading()
+	{
 		GameManager gameManager = GameManager.Instance;
 
-		if(sceneId == 4)
+		if(mTempSceneId == 4)
 		{
 			gameManager.currentElement = gameManager.pathChosen;
 
@@ -124,9 +140,9 @@ class SceneManagerChoiceScreen : SceneManager
 			Debug.Log("Right element was set to " + gameManager.rightElement);
 		}
 
-		Debug.Log("Loading level " + sceneId);
+		Debug.Log("Loading level " + mTempSceneId);
 
-		Application.LoadLevel(sceneId);
+		Application.LoadLevel(mTempSceneId);
 	}
 
 	void Update()

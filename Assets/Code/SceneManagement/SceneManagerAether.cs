@@ -14,7 +14,7 @@ class SceneManagerAether : SceneManager
 
 	public void FadeOutNow ()
 	{
-		fade.FadeOut ();
+		fade.FadeOut(1, 1, 1, 0);
 	}
 
 	public override void LoadScene(int sceneId)
