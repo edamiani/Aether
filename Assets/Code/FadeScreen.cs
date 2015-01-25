@@ -11,7 +11,7 @@ public class FadeScreen : MonoBehaviour
 	void Awake() 
 	{
 		img = GetComponent<Image>();
-		FadeIn(0, 0, 0, 1);
+		FadeIn(1, 1, 1, 1);
 	}
 	
 	public void FadeOut(int red, int green, int blue, int alpha)

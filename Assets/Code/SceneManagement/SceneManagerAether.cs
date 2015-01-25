@@ -9,12 +9,12 @@ class SceneManagerAether : SceneManager
 	void Awake()
 	{
 		Debug.Log("Game Over!!!");
-		Invoke ("FadeOutNow", 5f);
+		//Invoke ("FadeOutNow", 25f);
 	}
 
 	public void FadeOutNow ()
 	{
-		fade.FadeOut(1, 1, 1, 0);
+		//fade.FadeOut(1, 1, 1, 0);
 	}
 
 	public override void LoadScene(int sceneId)
