@@ -3,11 +3,13 @@ using System.Collections;
 
 public class Enemy : MonoBehaviour {
 
-	private float 		timeToHide = 0;
-	private int			waitingTimeToHide;
+	private float 					timeToHide = 0;
+	private float					waitingTimeToHide;
 
-	private bool		mRespawned = false;
-	public bool			respawned { get { return mRespawned; } }
+	private bool					mRespawned = false;
+	public bool						respawned { get { return mRespawned; } }
+
+	private EarthMiniGameManager		earthMiniGameManager;
 
 	// Use this for initialization
 	void Start () {
@@ -17,7 +19,6 @@ public class Enemy : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		CanHide ();
-		
 	}
 
 	private void CanHide() {
@@ -36,9 +37,20 @@ public class Enemy : MonoBehaviour {
 		this.mRespawned = false;
 	}
 
-	public void Respawn(int waitingTimeToHide) {
+	public void Respawn(float waitingTimeToHide) {
 		this.renderer.enabled = true;
 		this.waitingTimeToHide = waitingTimeToHide;
 		this.mRespawned = true;
+	}
+
+	void OnMouseDown() {
+		CheckClick ();
+	}
+
+	private void CheckClick() {
+		if (mRespawned) {
+			Debug.Log ("Pressed left click.");
+			EarthMiniGameManager.Instance.EnemyCliked();
+		}
 	}
 }
