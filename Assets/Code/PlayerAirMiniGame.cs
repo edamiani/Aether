@@ -20,5 +20,7 @@ public class PlayerAirMiniGame : MonoBehaviour {
 			navComponent.SetDestination(playerGoal.position);
 		}
 	}
+
+
 }
 
