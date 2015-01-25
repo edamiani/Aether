@@ -14,7 +14,7 @@ public class CharacterScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		float moveX = Input.GetAxis ("Horizontal");
+		float moveX = Input.GetAxis ("Horizontal");  
 
 	
 		if(moveX < 0) {
