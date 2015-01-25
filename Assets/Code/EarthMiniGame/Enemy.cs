@@ -49,8 +49,9 @@ public class Enemy : MonoBehaviour {
 
 	private void CheckClick() {
 		if (mRespawned) {
-			Debug.Log ("Pressed left click.");
 			EarthMiniGameManager.Instance.EnemyCliked();
 		}
 	}
 }
+
+
