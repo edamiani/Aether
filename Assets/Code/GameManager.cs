@@ -31,7 +31,6 @@ public class GameManager : MonoBehaviour {
 	public ElementalType		initialElement { get { return mInitialElement; } set { mInitialElement = value; } }
 	public ElementalType		leftElement { get { return mLeftElement; } set { mLeftElement = value; } }
 	public ElementalType		pathChosen { get { return mPathChosen; } set { mPathChosen = value; } }
-	public ElementalType		previousElement { get { return mPathChosen; } set { mPreviousElement = value; } }
 	public ElementalType		rightElement { get { return mRightElement; } set { mRightElement = value; } }
 	public Score				score { get { return mScore; } }
 
@@ -41,7 +40,6 @@ public class GameManager : MonoBehaviour {
 	private ElementalType		mInitialElement;
 	private ElementalType		mLeftElement;
 	private ElementalType		mPathChosen;
-	private ElementalType		mPreviousElement;
 	private ElementalType		mRightElement;
 	private Score				mScore = new Score();
 
