@@ -4,8 +4,94 @@ using UnityEngine;
 
 class SceneManagerChoiceScreen : SceneManager
 {
+	private SpriteRenderer mSprBgLeftFire;
+	private SpriteRenderer mSprBgLeftAir;
+	private SpriteRenderer mSprBgRightWater;
+	private SpriteRenderer mSprBgRightEarth;
+
+	private SpriteRenderer mSprGateLeftFireAir;
+	private SpriteRenderer mSprGateLeftFireEarth;
+	private SpriteRenderer mSprGateLeftWaterAir;
+	private SpriteRenderer mSprGateLeftWaterEarth;
+	private SpriteRenderer mSprGateRightFireAir;
+	private SpriteRenderer mSprGateRightFireEarth;
+	private SpriteRenderer mSprGateRightWaterAir;
+	private SpriteRenderer mSprGateRightWaterEarth;
+
 	void Awake()
 	{
+		mSprBgLeftAir = GameObject.Find("spr_bg_left_air").GetComponent<SpriteRenderer>();
+		mSprBgLeftFire = GameObject.Find("spr_bg_left_fire").GetComponent<SpriteRenderer>();
+		mSprBgRightEarth = GameObject.Find("spr_bg_right_earth").GetComponent<SpriteRenderer>();
+		mSprBgRightWater = GameObject.Find("spr_bg_right_water").GetComponent<SpriteRenderer>();
+
+		mSprGateLeftFireAir = GameObject.Find("spr_gate_left_fire_air").GetComponent<SpriteRenderer>();
+		mSprGateLeftFireEarth = GameObject.Find("spr_gate_left_fire_earth").GetComponent<SpriteRenderer>();
+		mSprGateLeftWaterAir = GameObject.Find("spr_gate_left_water_air").GetComponent<SpriteRenderer>();
+		mSprGateLeftWaterEarth = GameObject.Find("spr_gate_left_water_earth").GetComponent<SpriteRenderer>();
+		mSprGateRightFireAir = GameObject.Find("spr_gate_right_fire_air").GetComponent<SpriteRenderer>();
+		mSprGateRightFireEarth = GameObject.Find("spr_gate_right_fire_earth").GetComponent<SpriteRenderer>();
+		mSprGateRightWaterAir = GameObject.Find("spr_gate_right_water_air").GetComponent<SpriteRenderer>();
+		mSprGateRightWaterEarth = GameObject.Find("spr_gate_right_water_earth").GetComponent<SpriteRenderer>();
+
+		// Disable everything by default
+		mSprBgLeftFire.enabled = false;
+		mSprBgLeftAir.enabled = false;
+		mSprBgRightWater.enabled = false;
+		mSprBgRightEarth.enabled = false;
+
+		mSprGateLeftFireAir.enabled = false;
+		mSprGateLeftFireEarth.enabled = false;
+		mSprGateLeftWaterAir.enabled = false;
+		mSprGateLeftWaterEarth.enabled = false;
+		mSprGateRightFireAir.enabled = false;
+		mSprGateRightFireEarth.enabled = false;
+		mSprGateRightWaterAir.enabled = false;
+		mSprGateRightWaterEarth.enabled = false;
+
+		GameManager gameManager = GameManager.Instance;
+
+		switch(gameManager.currentElement)
+		{
+			case GameManager.ElementalType.Air:
+				mSprBgLeftFire.enabled = true;
+				mSprBgRightWater.enabled = true;
+
+				mSprGateLeftFireAir.enabled = true;
+				mSprGateRightWaterAir.enabled = true;
+
+				break;
+
+			case GameManager.ElementalType.Earth:
+				mSprBgLeftFire.enabled = true;
+				mSprBgRightWater.enabled = true;
+
+				mSprGateLeftFireEarth.enabled = true;
+				mSprGateRightWaterEarth.enabled = true;
+
+				break;
+
+			case GameManager.ElementalType.Fire:
+				mSprBgLeftAir.enabled = true;
+				mSprBgRightEarth.enabled = true;
+
+				mSprGateLeftFireAir.enabled = true;
+				mSprGateRightFireEarth.enabled = true;
+
+				break;
+
+			case GameManager.ElementalType.Water:
+				mSprBgLeftAir.enabled = true;
+				mSprBgRightEarth.enabled = true;
+
+				mSprGateLeftWaterAir.enabled = true;
+				mSprGateRightWaterEarth.enabled = true;
+
+				break;
+
+			default:
+				break;
+		}
 	}
 
 	public override void LoadScene(int sceneId)
