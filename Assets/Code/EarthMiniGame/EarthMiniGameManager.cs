@@ -3,14 +3,40 @@ using System.Collections;
 
 public class EarthMiniGameManager : MonoBehaviour {
 
+	public static EarthMiniGameManager Instance;
+
 	private static int 	MAX_ENEMIES = 9;
+	private static int	POINT_ON_CLICK_ENEMY = 10;
+	private static int	POINT_ON_CLICK_ALLY = 10;
 
 	public Enemy[]		enemies = new Enemy[MAX_ENEMIES];
 
 	private float 		timerToRespawn;
-	private int 		waitingTimeToRespawn = 2;
+	private float 		waitingTimeToRespawn = 0.5f;
 
-	private int			timeToHide = 2;
+	private float		waitingTimeToHide = 1;
+
+	public int			mPoints = 0;
+	private int			points { get { return mPoints; } }
+
+	void Awake () 
+	{
+		if(Instance == null)
+		{
+			//If I am the first instance, make me the Singleton
+			Instance = this;
+			DontDestroyOnLoad(this);
+		}
+		else
+		{
+			//If a Singleton already exists and you find
+			//another reference in scene, destroy it!
+			if(this != Instance)
+			{
+				Destroy(this.gameObject);
+			}
+		}
+	}
 	
 	// Use this for initialization
 	void Start () {
@@ -37,10 +63,14 @@ public class EarthMiniGameManager : MonoBehaviour {
 		int indexRandomEnemy = Random.Range(0, MAX_ENEMIES);
 		Enemy enemyToRespawn = enemies [indexRandomEnemy];
 		if (!enemyToRespawn.respawned) {
-			enemyToRespawn.Respawn(timeToHide);
+			enemyToRespawn.Respawn(this.waitingTimeToHide);
 			return true;
 		}
 		return false;
+	}
 
+	public void EnemyCliked() {
+		mPoints += POINT_ON_CLICK_ENEMY;
+		Debug.Log (points);
 	}
 }
