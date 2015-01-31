@@ -12,17 +12,17 @@ public class InputManagerChoiceScreen : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		GameManager gameManager = GameManager.Instance;
+		//GameManager gameManager = GameManager.Instance;
 
-		if(Input.GetKeyUp(KeyCode.LeftArrow))
-		{
-			gameManager.pathChosen = gameManager.leftElement;
-			gameManager.LoadMiniGames(gameManager.currentElement, gameManager.leftElement);
-		}
-		else if(Input.GetKeyUp(KeyCode.RightArrow))
-		{
-			gameManager.pathChosen = gameManager.rightElement;
-			gameManager.LoadMiniGames(gameManager.currentElement, gameManager.rightElement);
-		}
+		//if(Input.GetKeyUp(KeyCode.LeftArrow))
+		//{
+		//	gameManager.pathChosen = gameManager.leftElement;
+		//	gameManager.LoadMiniGames(gameManager.currentElement, gameManager.leftElement);
+		//}
+		//else if(Input.GetKeyUp(KeyCode.RightArrow))
+		//{
+		//	gameManager.pathChosen = gameManager.rightElement;
+		//	gameManager.LoadMiniGames(gameManager.currentElement, gameManager.rightElement);
+		//}
 	}
 }
