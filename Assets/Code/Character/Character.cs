@@ -19,7 +19,9 @@ public class Character : MonoBehaviour {
 
 		
 		float moveX = Input.GetAxis ("Horizontal");
-		rigidbody2D.velocity= new Vector2 (moveX * maxSpeed, rigidbody2D.velocity.y);
+//		changes from unity4 to unity5
+//		rigidbody2D.velocity= new Vector2 (moveX * maxSpeed, rigidbody2D.velocity.y);
+		GetComponent<Rigidbody2D>().velocity= new Vector2 (moveX * maxSpeed, GetComponent<Rigidbody2D>().velocity.y);
 
 		anim.SetFloat ("Speed", Mathf.Abs (moveX));
 

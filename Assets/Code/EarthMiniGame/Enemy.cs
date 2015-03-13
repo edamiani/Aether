@@ -33,12 +33,16 @@ public class Enemy : MonoBehaviour {
 	}
 
 	public void Hide() {
-		this.renderer.enabled = false;
+//		changes from unity4 to unity5
+//		this.renderer.enabled = false;
+		this.GetComponent<Renderer>().enabled = false;
 		this.mRespawned = false;
 	}
 
 	public void Respawn(float waitingTimeToHide) {
-		this.renderer.enabled = true;
+//		changes from unity4 to unity5
+//		this.renderer.enabled = true;
+		this.GetComponent<Renderer>().enabled = true;
 		this.waitingTimeToHide = waitingTimeToHide;
 		this.mRespawned = true;
 	}
